@@ -1,0 +1,186 @@
+\documentclass[11pt, oneside]{article}
+
+\usepackage[top=1.2in, bottom=0.9in, left=1.5in, right=1.5in]{geometry}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  pdfauthor = Amin Bandali,
+  pdfkeywords = {formal methods, programming languages, type systems, haskell, rust},
+  pdftitle = {Amin Bandali --- Resume},
+  pdfsubject = {Resume},
+  pdfpagemode = UseNone
+}
+
+% set some font features
+\defaultfontfeatures{Ligatures=TeX,Numbers=Lining}
+
+% remove page numbers
+\pagestyle{empty}
+
+% set font styles
+\setsansfont{Calluna Sans}[
+BoldFont = Calluna Sans Bold,
+ItalicFont = Calluna Sans Italic]
+\setmainfont{Calluna}[
+BoldFont = Calluna Bold,
+ItalicFont = Calluna Italic]
+
+% -- name command --%
+\newcommand{\name}[1]{
+  \begin{center}
+    \fontsize{25}{35}\selectfont
+    \fontspec[Letters=SmallCaps]{Calluna}#1
+  \end{center}
+  \vspace{-8pt}
+}
+
+%-- section heading --%
+\newcommand{\heading}[1]{
+  \vspace{11pt}
+  \hspace{-6pt}
+  \raggedright\
+  \color{gray}\hrulefill\ \\
+  \vspace{-3pt}
+  \color{black}
+  {
+    \fontspec[Letters={SmallCaps,UppercaseSmallCaps}]{Calluna Sans Bold}
+    #1
+  }
+  \vspace{5pt}
+}
+
+%-- institution/company name, location, and years --%
+\newcommand{\institution}[3]{
+  \vspace{3pt}
+  {\Large #1, } {\large #2} \hfill {\large #3}
+}
+
+%-- position/degree--%
+\newcommand{\job}[2]{\quad {\normalsize{#1}} \hfill {\normalsize{#2}}}
+
+% -- responsibilities --%
+\newenvironment{position}[2]{
+  \job{#1}{#2}
+  \vspace{-5pt}
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+  }
+  {
+  \end{itemize}
+  \vspace{2pt}
+}
+
+%-- address --%
+\newenvironment{address}{
+  \vspace{0.1in}
+  \centering
+  \fontspec[Letters={SmallCaps,UppercaseSmallCaps},LetterSpace=4.0]{Calluna Sans}
+  \fontsize{13}{18}\selectfont
+}
+{
+  \par
+}
+
+\newlength\mylen
+\newlength\mylenn
+\settowidth\mylen{\textbullet}
+\settowidth\mylenn{\textbullet}
+\addtolength\mylen{7pt}
+\addtolength\mylenn{23pt}
+\setlist[itemize,1]{leftmargin=+\mylenn,labelsep=+\mylen}
+
+\begin{document}
+
+\name{Amin Bandali}
+
+\vspace{-4pt}
+\begin{address}
+  % {\small 7} North Park Rd, Thornhill, ON, Canada \\
+  Toronto, ON, Canada \\
+  $\;$ Amin\,@\,AminB.org
+\end{address}
+
+% ---- Education ----%
+\raggedright\
+
+\vspace{-14.5pt}
+\heading{Education}
+
+\institution{York University}{Toronto, Canada}{}
+
+\begin{position}{Honours Bachelor of Science in Computer Science}{\large 2013--present}
+\item Cumulative GPA: 7.9/9.0
+\item Relevant coursework: Computational Complexity, AI \& Logic
+  Programming, System Specification \& Refinement, OS
+  Design, Design \& Analysis of Algorithms
+\end{position}
+
+% ---- Experience ----%
+\vspace{-10pt}
+\heading{Experience}
+
+% -- SEL, YorkU --%
+\institution{Software Engineering Lab}{York University}{summer 2016}
+
+\begin{position}{Research Student}{}
+\item Decoupled the logic module of \textbf{Literate Unit-B}, and used
+  it to build \textbf{Unit-B Web}, a web interface using Literate
+  Unit-B for doing predicate calculus proofs.
+\item Currently volunteering for implementing subtyping for Literate
+  Unit-B.
+\end{position}
+
+%-- Lotek --%
+\institution{Lotek Wireless Inc.}{Newmarket, Canada}{2015--2016}
+
+\begin{position}{Software Developer}{}
+\item Created various applications in \textbf{C} and \textbf{C\#} to
+  test and analyze a \textbf{satellite pass prediction} algorithm for
+  predicting pass windows of \textbf{Argos} satellites
+\item Designed and implemented an employee portal in \textbf{C\#} and
+  \textbf{MVC}, used by employees for accessing data catalogs and
+  archives
+\end{position}
+
+% -- EmacsConf --%
+\institution{EmacsConf
+  2015}{\href{http://emacsconf.org}{emacsconf.org}}{summer 2015}
+
+\begin{position}{Organizer}{}
+\item Key organizer and maintainer of vital pieces of the EmacsConf
+  infrastructure
+\end{position}
+
+%-- Athlete Builder --%
+\institution{Athlete Builder}{Ottawa, Canada}{2013--2014}
+
+\begin{position}{Software Developer}{}
+\item Developed the Backend of Athlete Builder platform in
+  \textbf{C\#} and \textbf{MVC}
+\item Key role in development of the platform core
+\item Developed the alpha version of Athlete Builder Android app in
+  \textbf{Java}
+\end{position}
+
+% ---- Programming Skills ----%
+\vspace{-10pt}
+\heading{Programming Skills}
+
+% \vspace{-4pt}
+Linux and Windows: Python, C, C\#, Haskell, Java, JavaScript, \LaTeX\ \\[3pt]
+Familiar with C++, Bash scripting, Rust, PHP \\[3pt]
+Tools: Git, Emacs, Zsh, CI Systems, Rodin, SQL DBs
+
+% ---- Research Interests ----%
+\vspace{-10pt}
+\heading{Research Interests}
+
+% \vspace{-4pt}
+Programming languages, type systems, and formal methods.
+\end{document}
