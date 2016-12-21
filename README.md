@@ -12,6 +12,12 @@ Use `xelatex resume.tex` to generate the PDF. Or alternatively,
 use `latexmk -pvc -xelatex resume.tex` to preview and automatically re-compile
 when saving changes.
 
+## License
+
+The source code is licensed under the LaTeX Project Public License, either
+version 1.3 of this license or (at your option) any later version.
+See [LICENSE](LICENSE).
+
 [stevenhair]: http://stevenhair.com/blog/2014/2/11/buttericks-practical-typography-and-xelatex-resumes/
 [mbresumes]: http://practicaltypography.com/resumes.html
 [fontspec]: https://www.ctan.org/pkg/fontspec?lang=en
